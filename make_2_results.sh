@@ -10,12 +10,10 @@ TAXID="t1"            ## there are two taxids: t1 and t2.
 
 ## how many PATHOGEN is determined in setup.R (search for object NAMS)
 
-PATHOGEN=(data/0_raw/pathogen/results_max3_bwa_mem_hiv_18/NC_009334_with_t1_alts_gene_matrix.max0samp.depth_corr_counts.non_synonymous.dat 
-          data/0_raw/pathogen/results_max3_bwa_mem_hiv_18/NC_009334_with_t1_alts_aa_variant_matrix.non_synonymous.binary.dat
-          data/0_raw/pathogen/results_max3_bwa_mem_hiv_18/NC_009334_with_t1_alts_gene_matrix.max1samp.binary.non_synonymous.dat
-          data/0_raw/pathogen/results_max3_bwa_mem_hiv_18/NC_009334_with_t1_alts_gene_matrix.max5samp.binary.non_synonymous.dat )
+PATHOGEN=(data/0_raw/pathogen/results_max3_bwa_mem_hiv_18/NC_009334_with_t1_alts_aa_variant_matrix.non_synonymous.binary.dat
+          data/0_raw/pathogen/results_max3_bwa_mem_hiv_18/NC_009334_with_t1_alts_gene_matrix.max1samp.binary.non_synonymous.dat )
 
-OUTCOMEMODEL=(continuous binary binary binary)
+OUTCOMEMODEL=( binary binary)
 
 
 ## run to get more stricter QC SNPs
