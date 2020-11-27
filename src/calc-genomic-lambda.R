@@ -7,15 +7,6 @@
 ##////////////////////////////////////////////////////////////////
 
 
-#PATHOGEN=(/home/rueger/G2G-EBV/data/0_raw/pathogen/results_max3_bwa_mem_hiv_18/NC_009334_with_t1_alts_gene_matrix.max0samp.depth_corr_counts.non_synonymous.dat ## 69
-#          /home/rueger/G2G-EBV/data/0_raw/pathogen/results_max3_bwa_mem_hiv_18/NC_009334_with_t1_alts_aa_variant_matrix.non_synonymous.binary.dat ##  572
-
-## some default args that will be overwritten in the next line, but here for debugging
-args <-
-  c(
-    "data/0_raw/pathogen/results_max3_bwa_mem_hiv_18/NC_009334_with_t1_alts_gene_matrix.max0samp.depth_corr_counts.non_synonymous.dat")
-
-
 args <- commandArgs(trailingOnly = TRUE)
 
 
@@ -128,16 +119,10 @@ range(sel_lambda$lambda_gc, na.rm = TRUE)
 load(glue::glue("{DIR_SCRATCH}/genomic_lambda_NC_009334_with_t1_alts_gene_matrix.max1samp.binary.non_synonymous.dat.RData"))
 gc_gene1 <- sel_lambda
 
-load(glue::glue("{DIR_SCRATCH}/genomic_lambda_NC_009334_with_t1_alts_gene_matrix.max5samp.binary.non_synonymous.dat.RData"))
-gc_gene5 <- sel_lambda
-
-load(glue::glue("{DIR_SCRATCH}/genomic_lambda_NC_009334_with_t1_alts_gene_matrix.max0samp.depth_corr_counts.non_synonymous.dat.RData"))
-gc_genefreq <- sel_lambda
-
 load(glue::glue("{DIR_SCRATCH}/genomic_lambda_NC_009334_with_t1_alts_aa_variant_matrix.non_synonymous.binary.dat.RData"))
 gc_aa <- sel_lambda
 
-gc_wide <- rbind(gc_gene1, gc_gene5, gc_genefreq, gc_aa)
+gc_wide <- rbind(gc_gene1, gc_aa)
 gc <- gc_wide %>% tidyr::pivot_longer(cols = starts_with("lambda_gc"), names_to = "qc_done", values_to = "lambda_gc")
 
 ## range

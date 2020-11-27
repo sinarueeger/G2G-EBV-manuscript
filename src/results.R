@@ -23,21 +23,6 @@ publication <- TRUE
 ##                           0. Setup                           //
 ##////////////////////////////////////////////////////////////////
 
-
-#PATHOGEN=(/home/rueger/G2G-EBV/data/0_raw/pathogen/results_max3_bwa_mem_hiv_18/NC_009334_with_t1_alts_gene_matrix.max0samp.depth_corr_counts.non_synonymous.dat ## 69
-#          /home/rueger/G2G-EBV/data/0_raw/pathogen/results_max3_bwa_mem_hiv_18/NC_009334_with_t1_alts_aa_variant_matrix.non_synonymous.binary.dat ##  572
-## NC_009334_with_t1_alts_gene_matrix.max1samp.binary.non_synonymous.dat
-
-## some default args that will be overwritten in the next line, but here for debugging
-args <-
-  c(
-    "data/0_raw/pathogen/results_max3_bwa_mem_hiv_18/NC_009334_with_t1_alts_gene_matrix.max1samp.binary.non_synonymous.dat",
-    "t1",
-    "forreal",
-    "gcta"
-  )
-
-
 args <- commandArgs(trailingOnly = TRUE)
 
 
@@ -96,15 +81,11 @@ if (debugging)
 ## Create short string for annotation purposes
 NAM_short <- case_when(
   NAM %>% str_replace("_debugging", "") %>% str_replace("_validation", "") == "NC_009334_with_t1_alts_gene_matrix.max1samp.binary.non_synonymous.dat" ~ "Gene phenotype (binary, variants < 1 sample)",
-  NAM %>% str_replace("_debugging", "") %>% str_replace("_validation", "") == "NC_009334_with_t1_alts_gene_matrix.max5samp.binary.non_synonymous.dat" ~ "Gene phenotype (binary, variants < 5 samples )",
-  NAM %>% str_replace("_debugging", "") %>% str_replace("_validation", "") == "NC_009334_with_t1_alts_gene_matrix.max0samp.depth_corr_counts.non_synonymous.dat" ~ "Gene phenotype (variant frequency)",
   NAM %>% str_replace("_debugging", "") %>% str_replace("_validation", "") == "NC_009334_with_t1_alts_aa_variant_matrix.non_synonymous.binary.dat" ~ "Amino acid phenotype"
 )
 
 NAM2 <- case_when(
   NAM %>% str_replace("_debugging", "") %>% str_replace("_validation", "") == "NC_009334_with_t1_alts_gene_matrix.max1samp.binary.non_synonymous.dat" ~ "gene_matrix.max1samp",
-  NAM %>% str_replace("_debugging", "") %>% str_replace("_validation", "") == "NC_009334_with_t1_alts_gene_matrix.max5samp.binary.non_synonymous.dat" ~ "gene_matrix.max5samp",
-  NAM %>% str_replace("_debugging", "") %>% str_replace("_validation", "") == "NC_009334_with_t1_alts_gene_matrix.max0samp.depth_corr_counts.non_synonymous.dat" ~ "gene_matrix.max0samp",
   NAM %>% str_replace("_debugging", "") %>% str_replace("_validation", "") == "NC_009334_with_t1_alts_aa_variant_matrix.non_synonymous.binary.dat" ~ "aa_variant_matrix"
 )
 

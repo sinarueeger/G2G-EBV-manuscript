@@ -35,10 +35,6 @@ echo "Started phenotype $index"
 
 printf "   %s\n" $index
 
-## run checks --------------------------------------------
-## - depends on setup.R
-Rscript --vanilla src/checks.R  ${PATHOGEN[$index]} $TAXID $MODE
-
 ## run results -------------------------------------------
 Rscript --vanilla src/results.R  ${PATHOGEN[$index]} $TAXID $MODE "gcta"
 
