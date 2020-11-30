@@ -1,6 +1,6 @@
 # G2G analysis on EBV
 
-This repository contains all scripts relevant for G2G analysis on Epstein–Barr virus (EBV) in HIV patients. For EBV data preparation, please see [gitlab.com/ezlab/vir_var_calling](https://gitlab.com/ezlab/vir_var_calling).
+This repository contains all scripts relevant for G2G analysis on Epstein–Barr virus (EBV) in HIV patients. For EBV data preparation, please see [gitlab.com/ezlab/vir_var_calling](https://gitlab.com/ezlab/vir_var_calling). Results are available here: https://doi.org/10.5281/zenodo.4011995. 
 
 ## Usage
 
